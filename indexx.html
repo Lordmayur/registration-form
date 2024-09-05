@@ -1,0 +1,40 @@
+<div class="form-container">
+    <form id="registration-form">
+    <h2>Registration Form</h2>
+    <input type="text" placeholder="Name" required>
+    <input type="email" placeholder="Email" required>
+    <input type="password" placeholder="Password" required>
+    <button type="submit">Submit</button>
+</form>
+</div>
+<div class="feedback-container">
+    <h2>Thank you for registering ! </h2>
+    <p>Please provide your Feedback </p>
+    <form id="feedback-form">
+        <textarea placeholder="Enter your Feedback" required></textarea>
+        <button type="submit">Submit Feedback</button>
+    </form>
+</div>
+
+<script>
+    const RegistrationForm = document.getElementById('registration-form');
+    const formContainer = document.querySelector('.form-container');
+    const feedbackContainer = document.querySelector('.feedback-container');
+    
+    
+    
+    RegistrationForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        formContainer.style.display = 'none';
+        feedbackContainer.style.display = 'flex'; 
+    })
+    
+    const FeedbackForm = document.getElementById('feedback-form');
+    
+    FeedbackForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+            alert("Feedback submitted successfully !")
+            FeedbackForm.reset();
+    })
+    </script>
+    
